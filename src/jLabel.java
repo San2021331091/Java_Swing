@@ -33,7 +33,7 @@ private Font font;
         String str = userLabel.getToolTipText();
         //JOptionPane.showMessageDialog(null,str,"Warning",JOptionPane.WARNING_MESSAGE);
         passLabel = new JLabel("Enter your password:");
-        passLabel.setBounds(50,70,500,50);
+        passLabel.setBounds(50,70,500,60);
         passLabel.setFont(font);
         container.add(passLabel);
     }
