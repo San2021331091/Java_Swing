@@ -7,12 +7,15 @@ public class jTextField extends JFrame {
 private ImageIcon icon;
 private Container container;
 private JTextField tf1,tf2;
+private Font font;
+
       jTextField(){
 
 
           setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
           setBounds(100,50,1400,600);
           setTitle("Text Field");
+          setResizable(false);
           initComponents();
 
       }
@@ -24,11 +27,19 @@ private JTextField tf1,tf2;
           container.setLayout(null);
           container.setBackground(Color.RED);
           setIconImage(icon.getImage());
-          tf1 = new JTextField("Hi unicorn");
+          font = new Font("Aerial",Font.ITALIC+Font.BOLD,20);
+          tf1 = new JTextField();
           tf1.setBounds(200,50,250,50);
+          tf1.setFont(font);
+          tf1.setForeground(Color.YELLOW);
+          tf1.setBackground(Color.GREEN);
+          //tf1.setHorizontalAlignment(JTextField.CENTER);
+          tf1.setHorizontalAlignment(JTextField.RIGHT);
+
           container.add(tf1);
-          tf2 = new JTextField();
+          tf2 = new JTextField("Ani");
           tf2.setBounds(200,110,250,50);
+          tf2.setFont(font);
           container.add(tf2);
 
 
