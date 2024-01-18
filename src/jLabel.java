@@ -4,6 +4,9 @@ import java.awt.*;
 public class jLabel extends JFrame {
 
 private Container container;
+private JLabel userLabel,passLabel;
+private Font font;
+
     jLabel(){
 
 
@@ -14,12 +17,23 @@ private Container container;
 
     public void initComponents(){
 
+        container = this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(Color.PINK);
+        font = new Font("Aerial",Font.BOLD,20);
+        userLabel = new JLabel();
+        userLabel.setText("Enter your username:");
+        userLabel.setBounds(50,20,500,50);
+        userLabel.setFont(font);
+        userLabel.setForeground(Color.RED);
+        userLabel.setOpaque(true);
+        userLabel.setBackground(Color.YELLOW);
+        container.add(userLabel);
 
-
-
-
-
-
+        passLabel = new JLabel("Enter your password:");
+        passLabel.setBounds(50,70,500,50);
+        passLabel.setFont(font);
+        container.add(passLabel);
     }
 
 
@@ -31,7 +45,7 @@ private Container container;
           jLabel frame = new jLabel();
           frame.setVisible(true);
           frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-          frame.setBounds(200,60,700,400);
+          frame.setBounds(200,60,900,600);
           frame.setTitle("Window");
 
 
