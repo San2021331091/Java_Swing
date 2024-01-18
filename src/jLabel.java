@@ -28,8 +28,10 @@ private Font font;
         userLabel.setForeground(Color.RED);
         userLabel.setOpaque(true);
         userLabel.setBackground(Color.YELLOW);
+        userLabel.setToolTipText("Enter your username");
         container.add(userLabel);
-
+        String str = userLabel.getToolTipText();
+        //JOptionPane.showMessageDialog(null,str,"Warning",JOptionPane.WARNING_MESSAGE);
         passLabel = new JLabel("Enter your password:");
         passLabel.setBounds(50,70,500,50);
         passLabel.setFont(font);
