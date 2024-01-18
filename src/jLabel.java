@@ -31,7 +31,7 @@ private Container container;
           jLabel frame = new jLabel();
           frame.setVisible(true);
           frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-          frame.setBounds(200,50,700,400);
+          frame.setBounds(200,60,700,400);
           frame.setTitle("Window");
 
 
