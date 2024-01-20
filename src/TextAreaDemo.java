@@ -31,6 +31,8 @@ public class TextAreaDemo extends JFrame {
         jt.setBackground(Color.RED);
         jt.setForeground(Color.white);
         f = new Font("Aerial",Font.BOLD|Font.ITALIC,20);
+        jt.setLineWrap(true);
+        jt.setWrapStyleWord(true);
         jt.setFont(f);
         c.add(jt);
 
