@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class LoginFrame extends JFrame {
 
@@ -10,6 +11,9 @@ public class LoginFrame extends JFrame {
     private JTextField jf1;
     private JPasswordField jp1;
     private JButton btn1,btn2;
+
+    private Cursor cs,cs1;
+    private ImageIcon icon;
 
     private Container c;
     private Font f;
@@ -61,15 +65,25 @@ public class LoginFrame extends JFrame {
                  btn1.setFont(f);
                  btn1.setBackground(Color.BLUE);
                  btn1.setForeground(Color.WHITE);
+                 cs = new Cursor(Cursor.HAND_CURSOR);
+                 btn1.setCursor(cs);
                  c.add(btn1);
                  btn1.addActionListener(new ActionListener() {
                      @Override
                      public void actionPerformed(ActionEvent e) {
                         String userName = jf1.getText();
-                        String password = jp1.getText();
+                         char[] passwordChars = jp1.getPassword();
+                         String password = new String(passwordChars);
 
-                        if(userName.equals("porimol") && password.equals("dhd5257#fsgdj"))
-                            JOptionPane.showMessageDialog(null,"You have successfully logged in","Success",JOptionPane.INFORMATION_MESSAGE);
+                        if(userName.equals("porimol") && password.equals("dhd5257#fsgdj")) {
+                            JOptionPane.showMessageDialog(null, "You have successfully logged in", "Success", JOptionPane.INFORMATION_MESSAGE);
+                            //dispose();
+                            NewFrame newFro = new NewFrame();
+                            newFro.setVisible(true);
+                        }
+                        else if(userName.isEmpty() || password.isEmpty())
+                            JOptionPane.showMessageDialog(null,"Please enter both username and password","Error",JOptionPane.ERROR_MESSAGE);
+
                         else
                             JOptionPane.showMessageDialog(null,"Invalid username or password","Error",JOptionPane.ERROR_MESSAGE);
 
@@ -81,6 +95,8 @@ public class LoginFrame extends JFrame {
                  btn2.setFont(f);
                  btn2.setBackground(Color.GREEN);
                  btn2.setForeground(Color.WHITE);
+                 cs1 = new Cursor(Cursor.CROSSHAIR_CURSOR);
+                 btn2.setCursor(cs1);
                  c.add(btn2);
                  btn2.addActionListener(new ActionListener() {
                      @Override
@@ -89,6 +105,10 @@ public class LoginFrame extends JFrame {
                           jp1.setText("");
                      }
                  });
+
+                 icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("win.png")));
+                 this.setIconImage(icon.getImage());
+
 
              }
     public static void main(String[] args){
