@@ -8,6 +8,8 @@ public class TextAreaDemo extends JFrame {
 
     private Font f;
 
+    private JScrollPane js;
+
     TextAreaDemo(){
 
 
@@ -27,14 +29,15 @@ public class TextAreaDemo extends JFrame {
         c.setLayout(null);
         c.setBackground(Color.PINK);
         jt = new JTextArea("What's your comment");
-        jt.setBounds(150,50,600,200);
         jt.setBackground(Color.RED);
         jt.setForeground(Color.white);
         f = new Font("Aerial",Font.BOLD|Font.ITALIC,20);
         jt.setLineWrap(true);
         jt.setWrapStyleWord(true);
+        js = new JScrollPane(jt,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        js.setBounds(150,50,600,200);
         jt.setFont(f);
-        c.add(jt);
+        c.add(js);
 
     }
     public static void main(String [] args){
